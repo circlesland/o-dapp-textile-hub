@@ -1,0 +1,19 @@
+{
+  "name": "o-textile-hub",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omoearth/o-dapp-textile-hub.git"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/omoearth/o-dapp-textile-hub/issues"
+  },
+  "homepage": "https://github.com/omoearth/o-dapp-textile-hub#readme"
+}
