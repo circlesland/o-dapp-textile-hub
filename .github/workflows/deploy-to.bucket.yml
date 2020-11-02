@@ -1,0 +1,31 @@
+name: "°dentity"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  odentity-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls -la
+      - name: push o-wallet
+        id: owallet
+        uses: textileio/github-action-buckets@v20
+        with:
+          key: ${{ secrets.TEXTILE_ACCOUNT_KEY }}
+          secret: ${{ secrets.TEXTILE_ACCOUNT_SECRET }}
+          bucket: "o-textile-hub"
+          thread: "bafk3hjqnsapk7bbedswqq5pfhi3jue3kq7h6wnhgd5o7eedlrkroeva"
+          path: "src/"
+      - run: echo "bucket - ${{ steps.owallet.outputs.key }}"
+      - run: echo "ipfs - ${{ steps.owallet.outputs.ipfs }}"
+      - run: echo "ipfs link - ${{ steps.owallet.outputs.ipfsUrl }}"
+      - run: echo "ipns - ${{ steps.owallet.outputs.ipns }}"
+      - run: echo "ipns link - ${{ steps.owallet.outputs.ipnsUrl }}"
+      - run: echo "hub - ${{ steps.owallet.outputs.hub }}"
+      - run: echo "www - ${{ steps.owallet.outputs.www }}"
